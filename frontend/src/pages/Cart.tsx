@@ -10,7 +10,7 @@ const EmptyCart = () => {
 };
 
 const Cart = () => {
-  const { getCart } = useCart();
+  const { loading, getCart } = useCart();
   const [items, setItems] = useState<Item[]>([]);
   const { authUser } = useAuthContext();
 
@@ -22,6 +22,14 @@ const Cart = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  if (loading) {
+    return (
+      <div className="w-full h-[80vh] flex justify-center items-center">
+        Loading...
+      </div>
+    );
+  }
 
   return (
     <div className="w-full h-full">
