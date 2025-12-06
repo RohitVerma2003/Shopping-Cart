@@ -23,7 +23,7 @@ const Home = () => {
 
   return (
     <div className="w-full h-full flex justify-center items-center">
-      <div className="w-4/5 grid grid-cols-3 items-center flex-wrap gap-10 my-5">
+      <div className="w-4/5 grid md:grid-cols-3 items-center flex-wrap gap-10 my-5">
         {items.map((item) => (
           <Card key={item._id} item={item} addOrRemove={<AddButton id={item._id}/>}/>
         ))}

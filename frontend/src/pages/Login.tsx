@@ -20,7 +20,7 @@ const Login = () => {
   };
   return (
     <div className="w-full h-[80vh] flex justify-center items-center">
-      <div className="w-1/4 p-3 border-2 border-b-4 border-r-4 rounded-md">
+      <div className=" w-4/5 md:w-1/4 p-3 border-2 border-b-4 border-r-4 rounded-md">
         <div className="text-3xl text-center">Login</div>
         <div className="my-3">
           <input

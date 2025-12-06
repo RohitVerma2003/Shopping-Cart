@@ -25,12 +25,12 @@ const Cart = () => {
 
   return (
     <div className="w-full h-full">
-      <div className="text-3xl m-2 mx-6">
+      <div className="text-xl md:text-3xl m-2 mx-6">
         That's Your Cart, {authUser?.name}
       </div>
       <div className="w-full h-full flex justify-center items-center">
         {items.length > 0 ? (
-          <div className="w-4/5 grid grid-cols-3 items-center flex-wrap gap-10 my-5">
+          <div className="w-4/5 grid md:grid-cols-3 items-center flex-wrap gap-10 my-5">
             {items.map((item) => (
               <Card
                 key={item._id}

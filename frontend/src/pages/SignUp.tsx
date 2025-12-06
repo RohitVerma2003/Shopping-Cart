@@ -12,30 +12,34 @@ const SignUp = () => {
     confirmPassword: "",
   });
 
-  const {loading , signup} = useSignUp();
+  const { loading, signup } = useSignUp();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async() => {
-    if(loading) return;
-    if(!formData.name.length || !formData.username.length || !formData.password.length){
+  const handleSubmit = async () => {
+    if (loading) return;
+    if (
+      !formData.name.length ||
+      !formData.username.length ||
+      !formData.password.length
+    ) {
       toast.error("Fill all details");
       return;
     }
 
-    if(formData.password !== formData.confirmPassword){
+    if (formData.password !== formData.confirmPassword) {
       toast.error("Passwords are not matching");
       return;
     }
-    
+
     await signup(formData);
   };
 
   return (
     <div className="w-full h-[80vh] flex justify-center items-center">
-      <div className="w-1/4 p-3 border-2 border-b-4 border-r-4 rounded-md">
+      <div className="w-4/5 md:w-1/4 p-3 border-2 border-b-4 border-r-4 rounded-md">
         <div className="text-3xl text-center">Sign Up</div>
         <div className="my-3">
           <input

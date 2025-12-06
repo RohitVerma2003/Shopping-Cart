@@ -26,7 +26,7 @@ const useGetItems = () => {
       return data.items;
     } catch (error: any) {
       console.error(error);
-      toast.error(error.message)
+      toast.error(error.response.data.message)
       return [];
     } finally {
       setLoading(false);
